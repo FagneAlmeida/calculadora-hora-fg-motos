@@ -22,11 +22,7 @@
       --accent-hover: #2563eb;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
@@ -42,10 +38,7 @@
       padding: 2rem 1.25rem 4rem;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
+    header { text-align: center; margin-bottom: 2.5rem; }
 
     header h1 {
       font-size: 1.75rem;
@@ -80,10 +73,8 @@
       gap: 1.5rem;
     }
 
-    @media (max-width: 860px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
     }
 
     .card {
@@ -102,13 +93,9 @@
       gap: 0.5rem;
     }
 
-    .card h2 span {
-      font-size: 1.1rem;
-    }
+    .card h2 span { font-size: 1.1rem; }
 
-    .field {
-      margin-bottom: 1rem;
-    }
+    .field { margin-bottom: 1rem; }
 
     .field label {
       display: block;
@@ -123,7 +110,7 @@
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 0.7rem 0.9rem;
+      padding: 0.65rem 0.85rem;
       color: var(--text);
       font-size: 0.95rem;
       font-family: inherit;
@@ -144,7 +131,7 @@
     .row-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
+      gap: 0.85rem;
     }
 
     .btn {
@@ -152,8 +139,8 @@
       background: var(--accent);
       color: white;
       border: none;
-      border-radius: 12px;
-      padding: 0.9rem 1.25rem;
+      border-radius: 10px;
+      padding: 0.8rem 1.2rem;
       font-size: 0.95rem;
       font-weight: 600;
       font-family: inherit;
@@ -162,44 +149,38 @@
       margin-top: 0.5rem;
     }
 
-    .btn:hover {
-      background: var(--accent-hover);
+    .btn:hover { background: var(--accent-hover); }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
     }
 
-    .results {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    .btn-outline:hover {
+      background: var(--surface2);
+      border-color: var(--accent);
     }
+
+    .results { display: flex; flex-direction: column; gap: 0.85rem; }
 
     .result-card {
-      border-radius: 14px;
-      padding: 1.25rem 1.4rem;
-      border: 1px solid transparent;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
     }
 
-    .result-card.red {
-      background: rgba(239, 68, 68, 0.12);
-      border-color: rgba(239, 68, 68, 0.35);
-    }
-
-    .result-card.yellow {
-      background: rgba(234, 179, 8, 0.12);
-      border-color: rgba(234, 179, 8, 0.35);
-    }
-
-    .result-card.green {
-      background: rgba(34, 197, 94, 0.12);
-      border-color: rgba(34, 197, 94, 0.35);
-    }
+    .result-card.red { border-left: 4px solid var(--red); }
+    .result-card.yellow { border-left: 4px solid var(--yellow); }
+    .result-card.green { border-left: 4px solid var(--green); }
 
     .result-card .label {
       font-size: 0.75rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.03em;
       margin-bottom: 0.25rem;
-      opacity: 0.9;
     }
 
     .result-card.red .label { color: var(--red); }
@@ -207,15 +188,15 @@
     .result-card.green .label { color: var(--green); }
 
     .result-card .value {
-      font-size: 1.75rem;
+      font-size: 1.45rem;
       font-weight: 800;
       letter-spacing: -0.02em;
     }
 
     .result-card .desc {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--muted);
-      margin-top: 0.35rem;
+      margin-top: 0.2rem;
     }
 
     .meta {
@@ -227,16 +208,17 @@
 
     .meta-item {
       background: var(--bg);
-      border-radius: 10px;
-      padding: 0.75rem 1rem;
       border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem;
+      text-align: center;
     }
 
     .meta-item .k {
       font-size: 0.7rem;
       color: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
     }
 
     .meta-item .v {
@@ -246,7 +228,7 @@
     }
 
     .sim-section {
-      margin-top: 1.5rem;
+      margin-top: 1.75rem;
       padding-top: 1.5rem;
       border-top: 1px solid var(--border);
     }
@@ -259,39 +241,116 @@
 
     .sim-result {
       margin-top: 1rem;
-      padding: 1rem 1.15rem;
-      border-radius: 12px;
       background: var(--bg);
       border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+      font-size: 0.88rem;
+    }
+
+    .sim-result.alert { border-left: 4px solid var(--yellow); }
+    .sim-result.ok { border-left: 4px solid var(--green); }
+    .sim-result.danger { border-left: 4px solid var(--red); }
+
+    .servicos-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+
+    .servico-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.45rem 0.35rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.12s;
+      font-size: 0.85rem;
+    }
+
+    .servico-item:hover { background: var(--surface2); }
+
+    .servico-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--accent);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .servico-item .nome { flex: 1; color: var(--text); }
+    .servico-item .tempo {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .servico-cat {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin: 0.75rem 0 0.35rem;
+      padding-left: 0.35rem;
+    }
+
+    .servico-cat:first-child { margin-top: 0; }
+
+    .horas-resumo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--surface2);
+      border-radius: 10px;
+      padding: 0.7rem 1rem;
+      margin-bottom: 1rem;
       font-size: 0.9rem;
     }
 
-    .sim-result.alert {
-      border-color: rgba(239, 68, 68, 0.5);
-      background: rgba(239, 68, 68, 0.08);
+    .horas-resumo strong {
+      font-size: 1.15rem;
+      color: var(--accent);
     }
 
-    .sim-result.ok {
-      border-color: rgba(34, 197, 94, 0.5);
-      background: rgba(34, 197, 94, 0.08);
+    .preco-sugerido {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
     }
 
-    .sim-result strong {
-      display: block;
-      margin-bottom: 0.35rem;
+    .preco-sugerido .linha {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.25rem 0;
+    }
+
+    .preco-sugerido .linha.destaque {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--green);
+      margin-top: 0.35rem;
+      padding-top: 0.45rem;
+      border-top: 1px solid var(--border);
     }
 
     footer {
       text-align: center;
       margin-top: 2.5rem;
-      color: var(--muted);
       font-size: 0.8rem;
+      color: var(--muted);
     }
 
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    footer a { color: var(--accent); text-decoration: none; }
   </style>
 </head>
 <body>
@@ -305,55 +364,54 @@
     </header>
 
     <div class="grid">
-      <!-- Inputs -->
       <div class="card">
         <h2><span>⚙️</span> Dados de entrada</h2>
 
         <div class="field">
           <label>Custo fixo mensal (estrutura + aluguel + fixos)</label>
-          <input type="number" id="custoFixo" value="15000" min="0" step="100" />
+          <input type="number" id="custoFixo" value="15000" min="0" step="100" oninput="calcular()" />
           <div class="hint">Aluguel, energia, internet, software, seguros, etc.</div>
         </div>
 
         <div class="field">
           <label>Custo da equipe (salários + encargos)</label>
-          <input type="number" id="custoEquipe" value="18000" min="0" step="100" />
+          <input type="number" id="custoEquipe" value="18000" min="0" step="100" oninput="calcular()" />
           <div class="hint">Folha + INSS + FGTS + benefícios dos mecânicos e apoio</div>
         </div>
 
         <div class="field">
           <label>Impostos e taxas mensais</label>
-          <input type="number" id="impostos" value="3500" min="0" step="50" />
+          <input type="number" id="impostos" value="3500" min="0" step="50" oninput="calcular()" />
           <div class="hint">Simples, ISS, taxas bancárias, etc. (estimativa mensal)</div>
         </div>
 
         <div class="field">
           <label>Outras despesas operacionais</label>
-          <input type="number" id="outrasDespesas" value="2500" min="0" step="50" />
+          <input type="number" id="outrasDespesas" value="2500" min="0" step="50" oninput="calcular()" />
           <div class="hint">Ferramentas, EPI, limpeza, combustível, marketing, etc.</div>
         </div>
 
         <div class="row-2">
           <div class="field">
             <label>Horas disponíveis / mês</label>
-            <input type="number" id="horasDisponiveis" value="176" min="1" step="1" />
+            <input type="number" id="horasDisponiveis" value="176" min="1" step="1" oninput="calcular()" />
             <div class="hint">Ex: 8h × 22 dias = 176</div>
           </div>
           <div class="field">
             <label>% Produtividade real</label>
-            <input type="number" id="produtividade" value="62" min="1" max="100" step="1" />
+            <input type="number" id="produtividade" value="62" min="1" max="100" step="1" oninput="calcular()" />
             <div class="hint">Horas faturáveis / disponíveis</div>
           </div>
         </div>
 
         <div class="row-2">
           <div class="field">
-            <label>Lucro desejado / mês (R$)</label>
-            <input type="number" id="lucroDesejado" value="12000" min="0" step="100" />
+            <label>Lucro desejado mensal (R$)</label>
+            <input type="number" id="lucroDesejado" value="12000" min="0" step="100" oninput="calcular()" />
           </div>
           <div class="field">
             <label>Margem de segurança (%)</label>
-            <input type="number" id="margemSeguranca" value="15" min="0" max="100" step="1" />
+            <input type="number" id="margemSeguranca" value="15" min="0" max="100" step="1" oninput="calcular()" />
             <div class="hint">Sobre a hora operacional</div>
           </div>
         </div>
@@ -361,7 +419,6 @@
         <button class="btn" onclick="calcular()">Calcular hora FG Motos</button>
       </div>
 
-      <!-- Results -->
       <div class="card">
         <h2><span>📊</span> Resultado</h2>
 
@@ -396,34 +453,175 @@
           </div>
         </div>
 
-        <!-- Simulador de OS -->
         <div class="sim-section">
-          <h3>Simular Ordem de Serviço</h3>
-          <div class="row-2">
-            <div class="field">
-              <label>Horas da OS</label>
-              <input type="number" id="horasOS" value="4" min="0.5" step="0.5" />
+          <h3>🛠️ Simular Ordem de Serviço</h3>
+          <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.9rem">
+            Marque os serviços que serão feitos. A calculadora soma as horas automaticamente e mostra quanto cobrar.
+          </p>
+
+          <div class="servicos-box" id="listaServicos"></div>
+
+          <div class="horas-resumo">
+            <span>Horas totais estimadas</span>
+            <strong id="horasTotaisServicos">0,0 h</strong>
+          </div>
+
+          <div class="preco-sugerido" id="precosSugeridos" style="display:none">
+            <div class="linha">
+              <span>🔴 Mínimo sobrevivência</span>
+              <span id="sugSob">—</span>
             </div>
-            <div class="field">
-              <label>Valor cobrado de mão de obra (R$)</label>
-              <input type="number" id="valorCobrado" value="400" min="0" step="10" />
+            <div class="linha">
+              <span>🟡 Mínimo operacional</span>
+              <span id="sugOp">—</span>
+            </div>
+            <div class="linha destaque">
+              <span>🟢 Recomendado (FG Margem)</span>
+              <span id="sugFG">—</span>
             </div>
           </div>
-          <button class="btn" onclick="simularOS()" style="margin-top:0.25rem">Analisar OS</button>
+
+          <div class="row-2">
+            <div class="field">
+              <label>Horas da OS (ajustável)</label>
+              <input type="number" id="horasOS" value="0" min="0" step="0.25" oninput="atualizarSugestao()" />
+            </div>
+            <div class="field">
+              <label>Valor que você vai cobrar (R$)</label>
+              <input type="number" id="valorCobrado" value="0" min="0" step="10" />
+            </div>
+          </div>
+
+          <button class="btn" onclick="simularOS()">Analisar OS</button>
+          <button class="btn btn-outline" onclick="limparServicos()" style="margin-top:0.5rem">Limpar seleção</button>
+
           <div id="simResultado" class="sim-result" style="display:none"></div>
         </div>
       </div>
     </div>
 
     <footer>
-      Calculadora de Hora FG Motos · 
+      Calculadora de Hora FG Motos ·
       <a href="https://github.com/FagneAlmeida/calculadora-hora-fg-motos" target="_blank">GitHub</a>
     </footer>
   </div>
 
   <script>
+    const CATALOGO = [
+      { cat: "Revisões e Manutenção", itens: [
+        { id: "rev_basica", nome: "Revisão básica (óleo + filtro óleo + filtro ar)", tempo: 1.5 },
+        { id: "rev_completa", nome: "Revisão completa (fluidos + filtros + pastilhas)", tempo: 4.5 },
+        { id: "rev_premium", nome: "Revisão premium / grande (alta cilindrada)", tempo: 6.0 },
+        { id: "troca_oleo", nome: "Troca de óleo + filtro de óleo", tempo: 0.75 },
+        { id: "filtro_ar", nome: "Troca filtro de ar", tempo: 0.4 },
+        { id: "filtro_comb", nome: "Troca filtro de combustível", tempo: 0.6 },
+        { id: "fluido_freio", nome: "Troca fluido de freio (dianteiro + traseiro)", tempo: 1.0 },
+        { id: "fluido_radiador", nome: "Troca fluido de arrefecimento", tempo: 0.8 },
+        { id: "fluido_embreagem", nome: "Troca fluido de embreagem", tempo: 0.5 },
+      ]},
+      { cat: "Freios", itens: [
+        { id: "past_diant", nome: "Troca pastilhas dianteiras", tempo: 0.8 },
+        { id: "past_tras", nome: "Troca pastilhas traseiras", tempo: 0.6 },
+        { id: "past_ambas", nome: "Troca pastilhas (diant. + tras.)", tempo: 1.3 },
+        { id: "disco_diant", nome: "Troca disco de freio dianteiro", tempo: 1.2 },
+        { id: "disco_tras", nome: "Troca disco de freio traseiro", tempo: 1.0 },
+        { id: "sangria", nome: "Sangria completa do sistema de freio", tempo: 0.7 },
+      ]},
+      { cat: "Suspensão e Direção", itens: [
+        { id: "oleo_bengala", nome: "Troca óleo de bengala / retentores", tempo: 2.5 },
+        { id: "regulagem_susp", nome: "Regulagem de suspensão", tempo: 0.5 },
+        { id: "cabo_acel", nome: "Troca cabo do acelerador", tempo: 0.7 },
+        { id: "cabo_embreagem", nome: "Troca cabo de embreagem", tempo: 0.8 },
+      ]},
+      { cat: "Transmissão e Corrente", itens: [
+        { id: "corrente_kit", nome: "Troca kit transmissão (corrente + coroas)", tempo: 1.5 },
+        { id: "ajuste_corrente", nome: "Ajuste + limpeza + lubrificação de corrente", tempo: 0.4 },
+        { id: "oleo_cambio", nome: "Troca óleo de câmbio / transmissão", tempo: 0.6 },
+      ]},
+      { cat: "Elétrica e Diagnóstico", itens: [
+        { id: "diagnostico", nome: "Diagnóstico eletrônico (scanner)", tempo: 0.75 },
+        { id: "bateria", nome: "Troca de bateria", tempo: 0.4 },
+        { id: "velas", nome: "Troca de velas", tempo: 0.5 },
+        { id: "farol_led", nome: "Instalação de farol / LED", tempo: 1.0 },
+      ]},
+      { cat: "Motor e Embreagem", itens: [
+        { id: "embreagem", nome: "Troca de embreagem (disco + platô)", tempo: 4.0 },
+        { id: "junta_cabecote", nome: "Troca junta de cabeçote (estimativa)", tempo: 6.0 },
+        { id: "valvulas", nome: "Regulagem de válvulas", tempo: 2.5 },
+      ]},
+      { cat: "Outros", itens: [
+        { id: "pneus", nome: "Troca de pneus (par) + balanceamento", tempo: 1.0 },
+        { id: "limpeza", nome: "Limpeza geral / polimento básico", tempo: 1.5 },
+        { id: "acessorios", nome: "Instalação de acessórios (média)", tempo: 1.5 },
+        { id: "desmontagem", nome: "Desmontagem / montagem de carenagens", tempo: 1.0 },
+      ]},
+    ];
+
     function formatBRL(n) {
       return n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function formatHoras(h) {
+      return h.toFixed(1).replace('.', ',') + ' h';
+    }
+
+    function renderServicos() {
+      const box = document.getElementById('listaServicos');
+      let html = '';
+      CATALOGO.forEach(grupo => {
+        html += `<div class="servico-cat">${grupo.cat}</div>`;
+        grupo.itens.forEach(s => {
+          html += `
+            <label class="servico-item">
+              <input type="checkbox" data-tempo="${s.tempo}" data-id="${s.id}" onchange="somarHoras()" />
+              <span class="nome">${s.nome}</span>
+              <span class="tempo">${formatHoras(s.tempo)}</span>
+            </label>`;
+        });
+      });
+      box.innerHTML = html;
+    }
+
+    function somarHoras() {
+      const checks = document.querySelectorAll('#listaServicos input[type="checkbox"]:checked');
+      let total = 0;
+      checks.forEach(c => { total += parseFloat(c.dataset.tempo) || 0; });
+
+      document.getElementById('horasTotaisServicos').textContent = formatHoras(total);
+      document.getElementById('horasOS').value = total > 0 ? total.toFixed(2) : 0;
+
+      atualizarSugestao();
+    }
+
+    function limparServicos() {
+      document.querySelectorAll('#listaServicos input[type="checkbox"]').forEach(c => c.checked = false);
+      document.getElementById('horasTotaisServicos').textContent = '0,0 h';
+      document.getElementById('horasOS').value = 0;
+      document.getElementById('valorCobrado').value = 0;
+      document.getElementById('precosSugeridos').style.display = 'none';
+      document.getElementById('simResultado').style.display = 'none';
+    }
+
+    function atualizarSugestao() {
+      const horas = parseFloat(document.getElementById('horasOS').value) || 0;
+      if (!window._horaFG || horas <= 0) {
+        document.getElementById('precosSugeridos').style.display = 'none';
+        return;
+      }
+
+      const sob = window._horaSob * horas;
+      const op  = window._horaOp * horas;
+      const fg  = window._horaFG * horas;
+
+      document.getElementById('sugSob').textContent = formatBRL(sob);
+      document.getElementById('sugOp').textContent  = formatBRL(op);
+      document.getElementById('sugFG').textContent  = formatBRL(fg);
+      document.getElementById('precosSugeridos').style.display = 'block';
+
+      const valorAtual = parseFloat(document.getElementById('valorCobrado').value) || 0;
+      if (valorAtual === 0) {
+        document.getElementById('valorCobrado').value = Math.round(fg);
+      }
     }
 
     function calcular() {
@@ -439,25 +637,21 @@
       const horasProdutivas = horasDisp * (prod / 100);
       const custoTotal = custoFixo + custoEquipe + impostos + outras;
 
-      // 🔴 Sobrevivência = só o custo total / horas produtivas
       const horaSobrevivencia = custoTotal / horasProdutivas;
-
-      // 🟡 Operacional = sobrevivência + margem de segurança
       const horaOperacional = horaSobrevivencia * (1 + margem / 100);
-
-      // 🟢 FG Margem = (custo total + lucro) / horas + margem de segurança
       const horaFG = ((custoTotal + lucro) / horasProdutivas) * (1 + margem / 100);
 
       document.getElementById('horaSobrevivencia').textContent = formatBRL(horaSobrevivencia);
       document.getElementById('horaOperacional').textContent = formatBRL(horaOperacional);
       document.getElementById('horaFG').textContent = formatBRL(horaFG);
-      document.getElementById('horasProdutivas').textContent = horasProdutivas.toFixed(1) + ' h';
+      document.getElementById('horasProdutivas').textContent = formatHoras(horasProdutivas);
       document.getElementById('custoTotal').textContent = formatBRL(custoTotal);
 
-      // Guarda para o simulador
       window._horaFG = horaFG;
       window._horaOp = horaOperacional;
       window._horaSob = horaSobrevivencia;
+
+      atualizarSugestao();
     }
 
     function simularOS() {
@@ -478,15 +672,15 @@
 
       if (cobrado < minimoSob) {
         status = '🔴 ABAIXO DO PREÇO MÍNIMO';
-        classe = 'alert';
-        msg = `Esta OS está consumindo aproximadamente ${horas}h produtivas e <strong>não remunera adequadamente a estrutura da oficina</strong>. Você está trabalhando no prejuízo.`;
+        classe = 'danger';
+        msg = `Esta OS consome ~${formatHoras(horas)} e <strong>não remunera a estrutura</strong>. Você está trabalhando no prejuízo.`;
       } else if (cobrado < minimoOp) {
         status = '🟡 ACIMA DO SOBREVIVÊNCIA, ABAIXO DO OPERACIONAL';
         classe = 'alert';
         msg = `Cobre pelo menos a hora operacional. Ainda não há margem de segurança suficiente.`;
       } else if (cobrado < recomendado) {
         status = '🟡 DENTRO DO OPERACIONAL, ABAIXO DA META FG';
-        classe = '';
+        classe = 'alert';
         msg = `Paga a estrutura, mas ainda não atinge o lucro desejado.`;
       } else {
         status = '🟢 PREÇO ADEQUADO (META FG)';
@@ -507,7 +701,7 @@
       `;
     }
 
-    // Calcula ao carregar
+    renderServicos();
     calcular();
   </script>
 </body>
